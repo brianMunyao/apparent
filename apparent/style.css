@@ -1,0 +1,1268 @@
+*,
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #222f3e;
+    scroll-behavior: smooth;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+button {
+    cursor: pointer;
+}
+
+div.loader {
+    background: #27ae60;
+    color: #f5f6fa;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.loader * {
+    color: #f5f5f5;
+}
+
+div.loader p {
+    font-weight: 500;
+    font-size: 30px;
+}
+
+div.loader div {
+    text-align: center;
+}
+
+div.loader div>* {
+    margin: 10px 0;
+}
+
+div.loader div i {
+    font-size: 60px;
+    animation: loading 2s infinite linear;
+}
+
+@keyframes loading {
+    0% {
+        transform: translateX(0%) rotate(0deg);
+    }
+    25% {
+        transform: translateX(80%) rotate(90deg);
+    }
+    50% {
+        transform: translateX(0%) rotate(0deg);
+    }
+    75% {
+        transform: translateX(-80%) rotate(-90deg);
+    }
+    100% {
+        transform: translateX(0%) rotate(0deg);
+    }
+}
+
+nav {
+    position: fixed;
+    z-index: 2;
+    width: 100vw;
+    height: 60px;
+    top: 0;
+    background: rgba(255, 255, 255, 0.637);
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 2px 2px 10px #222f3e52;
+}
+
+nav>* {
+    cursor: pointer;
+}
+
+input,
+select {
+    border: none;
+}
+
+input:focus,
+select:focus,
+button:focus {
+    outline: none;
+}
+
+span.logo {
+    font-style: italic;
+    font-weight: 600;
+    font-size: 18px;
+    margin-right: auto;
+}
+
+span.navlink,
+span.navlink a {
+    margin: 0 10px;
+    transition: all 0.1s linear;
+}
+
+span.s:hover {
+    text-decoration: underline;
+}
+
+span.login,
+span.signup {
+    margin: 0 10px;
+}
+
+span.login,
+span.signup {
+    border: 1px solid #222f3e;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+span.login:hover,
+span.signup:hover {
+    background: #222f3e;
+    color: #dfe6e9;
+}
+
+div.logCheck,
+span.user {
+    margin-left: auto;
+}
+
+div.burger {
+    padding: 0px 10px;
+    cursor: pointer;
+    display: none;
+}
+
+div.burger div {
+    height: 3px;
+    background: #222f3e;
+    margin: 9px 0 9px auto;
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-origin: 0%;
+}
+
+div.burger div:nth-of-type(1) {
+    width: 35px;
+}
+
+div.burger div:nth-of-type(2) {
+    width: 22px;
+}
+
+div.burger div:nth-of-type(3) {
+    width: 35px;
+}
+
+div.burger:hover div {
+    width: 35px;
+}
+
+div.mobileNav {
+    display: none;
+}
+
+div.profile {
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    background: #fff;
+    box-shadow: 2px 2px 20px #222f3e4f;
+    height: fit-content;
+    min-width: 200px;
+    width: fit-content;
+    padding: 20px 10px;
+    border-radius: 10px;
+    z-index: 2;
+    transform: translateX(110%);
+    transition: all 0.2s linear;
+}
+
+div.profile>* {
+    position: relative;
+    text-align: center;
+    padding: 5px 0;
+}
+
+div.profile p.profile_name {
+    font-weight: 600;
+    font-size: 19px;
+}
+
+
+/*  
+    images for sliders
+
+*/
+
+div.start {
+    width: 100%;
+    position: relative;
+    height: 550px;
+    overflow: hidden;
+}
+
+
+/* div.start::after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content: '';
+    background: rgba(0, 0, 0, 0.226);
+} */
+
+div.start div.slider {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+div.start div.slider img {
+    position: relative;
+    width: 100%;
+}
+
+
+/*
+
+        search bar
+*/
+
+div.searchBar {
+    position: absolute;
+    top: 515px;
+    width: 96%;
+    margin: 0 2%;
+    height: 70px;
+    background-color: white;
+    z-index: 1;
+    border-radius: 3px;
+    padding: 8px;
+    transition: all 0.2s linear;
+    box-shadow: 2px 2px 20px rgb(167, 167, 167);
+    overflow: hidden;
+}
+
+div.searchBar div.inner {
+    height: 100%;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 120px;
+    grid-auto-rows: 100%;
+    column-gap: 10px;
+}
+
+div.searchBar div.inner span.s {
+    position: relative;
+}
+
+div.searchBar div.inner span.s>* {
+    position: absolute;
+}
+
+div.searchBar div.inner span.s input {
+    width: 100%;
+    height: 100%;
+    padding: 0 10px 0 38px;
+    font-size: 16px;
+}
+
+div.searchBar div.inner span.s i {
+    z-index: 1;
+    top: 50%;
+    transform: translate(10px, -50%) scale(1.06);
+    opacity: 0.8;
+}
+
+div.searchBar div.inner input#btn {
+    background: #222f3ef1;
+    color: rgba(255, 255, 255, 0.911);
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 3px;
+}
+
+div.searchBar div.inner input#btn:hover {
+    background: #222f3e;
+}
+
+div.searchResults div.searchBar {
+    position: relative;
+    top: 0;
+    margin-bottom: 10px;
+}
+
+div.searchResults {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    display: none;
+    overflow-y: auto;
+    width: 100%;
+    bottom: 0;
+    background-color: rgb(238, 238, 238);
+    z-index: 1;
+    padding-top: 20px;
+}
+
+div.searchResults div.filter {
+    height: auto;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 200px);
+    grid-auto-rows: 100%;
+    gap: 10px;
+    align-items: center;
+    padding: 0 50px 30px;
+}
+
+div.searchResults div.filter div.fItem {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+div.searchResults div.filter div.fItem label {
+    font-weight: 600;
+    margin-bottom: 3px;
+    font-size: 13px;
+}
+
+div.searchResults div.filter div.fItem select {
+    width: 100%;
+    height: 27px;
+    border-radius: 3px;
+    padding: 0 5px;
+    cursor: pointer;
+}
+
+div.searchResults div.res p.no {
+    padding: 10px 20px 20px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #222f3e91;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+div.searchResults div.res p.no i {
+    transform: scale(1.5);
+    cursor: pointer;
+    color: #dc3546;
+}
+
+div.searchResults div.res {
+    background: rgb(255, 255, 255);
+    min-height: 100%;
+    padding: 5px 20px;
+    overflow-y: auto;
+    border-radius: 15px 15px 0 0;
+}
+
+
+/*
+    modals styles
+*/
+
+span.modal-btn {
+    cursor: pointer;
+}
+
+div.modal-body {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    padding: 10px 0;
+    z-index: 10;
+    background: #222f3e36;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+div.modal-body>div {
+    position: relative;
+    display: none;
+    width: 450px;
+    min-height: 400px;
+    height: fit-content;
+    background: #fafafa;
+    border-radius: 8px;
+    padding: 10px 30px 30px;
+}
+
+div.modal-body>div div.h {
+    padding: 5px 0 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+div.modal-body>div span.formTitle {
+    font-size: 25px;
+    font-weight: 700;
+    opacity: 0.6;
+}
+
+div.modal-body>div div.h i {
+    cursor: pointer;
+    transform: scale(1.5);
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+div.modal-body>div div.h i:hover {
+    transform: rotate(90deg) scale(1.5);
+}
+
+div.modal-body>div div.formItem {
+    position: relative;
+    height: 40px;
+    width: 100%;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 6px -6px rgb(199, 199, 199), 0px 8px 20px #222f3e34;
+    border-radius: 10px;
+}
+
+div.modal-body>div div.formSubmit {
+    width: 100%;
+    margin-top: 20px;
+    height: 40px;
+    position: relative;
+}
+
+div.modal-body>div div.formSubmit input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #27ae60;
+    color: #fff;
+    font-weight: 600;
+    font-size: 17px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all 0.1s ease-in-out;
+}
+
+div.modal-body>div .err {
+    text-align: center;
+    padding: 0 0 10px;
+    font-size: 18px;
+    width: 100%;
+}
+
+div.modal-body>div div.formSubmit input:hover {
+    transform: scale(1.05);
+    background: #178042;
+}
+
+div.modal-body>div div.formItem>*,
+div.modal-body>div div.formSubmit>* {
+    position: absolute;
+}
+
+div.modal-body>div div.formItem>i,
+div.modal-body>div div.formItem>span {
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.9;
+}
+
+div.modal-body>div div.formItem span.s_err {
+    color: #c0392b;
+    font-size: 13px;
+    transform: translate(30px, 18px);
+}
+
+div.modal-body>div div.formItem span.s_err {
+    color: #c0392b;
+    font-size: 13px;
+    transform: translate(30px, 18px);
+}
+
+div.modal-body>div div.formItem>input {
+    width: 100%;
+    height: 100%;
+    padding: 5px 33px 5px 30px;
+    border-radius: 10px;
+    background: #fff;
+    font-size: 15px;
+}
+
+div.modal-body>div div.formItem>i:first-of-type {
+    left: 10px;
+    pointer-events: none;
+}
+
+div.modal-body>div div.formItem span.see {
+    right: 10px;
+}
+
+div.modal-body>div div.rem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+div.modal-body>div textarea {
+    width: 100%;
+    height: auto;
+}
+
+
+/*
+    alerts 
+
+*/
+
+div.alertContainer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 100px;
+    z-index: 20;
+    padding: 10px;
+    border-radius: 7px;
+    display: none;
+}
+
+div.alertContainer div.alertInner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+div.alertContainer div.alertInner>* {
+    position: absolute;
+}
+
+div.alertContainer div.alertInner * {
+    color: white;
+}
+
+div.alertContainer .fa-times {
+    cursor: pointer;
+    right: 0;
+    font-size: 18px;
+}
+
+div.alertContainer div.icon i {
+    font-size: 35px;
+    transform: translateY(10px);
+}
+
+div.alertContainer div.more {
+    left: 43px;
+}
+
+div.alertContainer div.more p.t {
+    font-weight: 700;
+    font-size: 23px;
+}
+
+
+/*
+    featured houses 
+
+*/
+
+div.featured {
+    padding: 60px 50px 50px;
+}
+
+div.featured p.title {
+    text-align: center;
+}
+
+div.featured div.featuredDisplay,
+div.searchResults div.res div.houses {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-auto-rows: 250px;
+    gap: 20px;
+}
+
+div.house {
+    position: relative;
+    background: #fff;
+    box-shadow: 2px 2px 20px #222f3e1a;
+    border: 0.5px solid #222f3e2a;
+    border-radius: 0 0 7px 7px;
+    transition: all 0.2s linear;
+    cursor: pointer;
+}
+
+div.house:hover {
+    box-shadow: 2px 2px 20px #222f3e5e;
+    transform: translateY(-5px);
+}
+
+div.house div.image {
+    height: 180px;
+    position: relative;
+    overflow: hidden;
+}
+
+div.house div.image span.like,
+div.house div.image span.like i {
+    transition: all 0.2s linear;
+}
+
+div.house div.image span.like {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    padding: 1.5px 4px;
+    right: 10px;
+    top: 10px;
+    border: 0.5px solid #eb3b5a;
+    background: white;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+div.house div.image span.like:hover {
+    background: #eb3b5a;
+}
+
+div.house div.image span.like:hover i {
+    color: #fff;
+}
+
+div.house div.image span.like i {
+    color: #eb3b5a;
+}
+
+div.house div.image img {
+    height: 100%;
+    width: 100%;
+}
+
+div.house p.location {
+    padding: 5px 10px 0;
+    font-weight: 600;
+    font-size: 13px;
+    opacity: 0.7;
+}
+
+div.house p.houseName {
+    padding: 5px 10px 0;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+div.house p.type {
+    padding: 0 10px 2px;
+    font-style: italic;
+}
+
+div.house span.rent {
+    font-weight: 600;
+    font-size: 18px;
+    padding: 0 10px;
+    position: absolute;
+    transform: translateY(4px);
+    color: #01b075;
+}
+
+div.house span.details {
+    float: right;
+    margin: 0 10px 0 0;
+    font-size: 13px;
+    border: 1px solid #222f3e;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.1s linear;
+    color: #dfe6e9;
+    background: #222f3e;
+}
+
+div.house span.details:hover {
+    background: #dfe6e9;
+    color: #222f3e;
+}
+
+div.house div.houseStats {
+    position: absolute;
+    bottom: 8px;
+    right: 0;
+    opacity: 0.7;
+}
+
+div.house div.houseStats span.statH {
+    margin: 0 3px 0 5px;
+}
+
+div.house div.houseStats span.statN {
+    margin: 0 5px 0 3px;
+}
+
+
+/*
+    clicked house
+    
+*/
+
+div.clickedHouse {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: white;
+    z-index: 10;
+    overflow-y: auto;
+    padding: 0 20px 5px;
+}
+
+div.clickedHouse div.topbar {
+    display: flex;
+    height: 60px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+div.clickedHouse div.topbar span.backButton button {
+    width: 45px;
+    height: 45px;
+    border-radius: 30px;
+    border: none;
+    background: rgb(238, 238, 238);
+    transition: background 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+div.clickedHouse div.topbar span.backButton button:hover {
+    background: rgb(224, 224, 224);
+}
+
+div.clickedHouse div.topbar span.backButton button i {
+    transition: transform 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+div.clickedHouse div.topbar span.backButton button:hover i {
+    transform: scale(1.2);
+}
+
+div.clickedHouse div.topbar span.call button,
+div.clickedHouse div.topbar span.call button * {
+    color: #fff;
+    padding: 0 5px;
+}
+
+div.clickedHouse div.topbar span.call button {
+    background: #27ae60;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+}
+
+div.clickedHouse div.imageHolder {
+    position: relative;
+    height: 400px;
+    width: 100%;
+}
+
+div.clickedHouse div.imageHolder>* {
+    position: absolute;
+}
+
+div.clickedHouse div.sideImage {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 210px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 100%);
+    grid-auto-rows: 120px;
+    gap: 10px;
+}
+
+div.clickedHouse div.sideImage div.miniImage {
+    border: 2px solid rgb(238, 238, 238);
+    padding: 2px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s linear;
+}
+
+div.clickedHouse div.sideImage div.miniImage:hover {
+    border: 2px solid #d4d4d4;
+}
+
+div.clickedHouse div.mainImage {
+    left: 220px;
+    right: 300px;
+    top: 0;
+    bottom: 0;
+}
+
+div.clickedHouse img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+div.clickedHouse div.contact {
+    position: absolute;
+    right: 0;
+    width: 300px;
+    top: 60px;
+    background-color: red;
+    border: 1px solid #222f3e;
+    height: 300px;
+}
+
+div.clickedHouse div.houseDetails {
+    display: flex;
+    flex-direction: row;
+}
+
+div.clickedHouse div.houseDetails .rentSpan {
+    font-size: 30px;
+    font-weight: 600;
+    color: #01b075;
+}
+
+div.clickedHouse div.houseDetails div.houseName,
+div.clickedHouse div.det {
+    display: flex;
+    flex-direction: column;
+}
+
+div.clickedHouse div.houseDetails div.houseName {
+    margin-left: 30px;
+}
+
+div.clickedHouse div.houseDetails div.houseName .name {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+div.clickedHouse div.houseDetails div.houseName .loc {
+    font-weight: 600;
+    color: rgb(167, 167, 167);
+    transform: translateY(-3px);
+    text-align: right;
+}
+
+div.clickedHouse div.details {
+    display: flex;
+    flex-direction: row;
+    border-top: 1px solid #222f3e23;
+    margin: 3px 300px 0 0;
+    padding: 6px 3px;
+}
+
+div.clickedHouse div.details div.det {
+    margin-right: 12px;
+}
+
+div.clickedHouse div.details span.no {
+    font-weight: 600;
+    font-size: 19px;
+}
+
+div.clickedHouse div.details i {
+    margin-left: 8px;
+    color: rgb(180, 180, 180);
+    font-size: 17px;
+}
+
+div.clickedHouse div.details div.desc {
+    display: flex;
+    flex-direction: row;
+}
+
+div.clickedHouse div.details div.desc div.descL {
+    font-size: 19px;
+    font-weight: 600;
+    margin: 0 10px 6px 0;
+}
+
+div.clickedHouse div.details div.desc div.descC {
+    opacity: 0.8;
+}
+
+div.clickedHouse div.det span.lab {
+    font-size: 12px;
+    font-weight: 600;
+    opacity: 0.7;
+    letter-spacing: 0.2px;
+}
+
+div.clickedHouse div.related {
+    position: absolute;
+    right: 20px;
+    top: 60px;
+    width: 290px;
+    height: 500px;
+}
+
+div.clickedHouse div.related>p {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 14px;
+    color: #7c7d80;
+    padding: 0 10px;
+}
+
+div.clickedHouse div.related div.relatedHouses {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 100%);
+    grid-auto-rows: 100px;
+    gap: 15px;
+    overflow-y: auto;
+}
+
+div.relHouse {
+    position: relative;
+    border: 1px solid #222f3e44;
+    box-shadow: 1px 1px 10px #222f3e3a;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .2s linear;
+}
+
+div.relHouse:hover {
+    box-shadow: 1px 1px 10px #222f3e5e;
+}
+
+div.relHouse div.image {
+    width: 130px;
+    height: 100%;
+}
+
+div.relHouse div.image img {
+    width: 100%;
+    height: 100%;
+}
+
+div.relHouse div.houseName {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    left: 135px;
+    right: 0;
+    padding: 5px 10px 5px 0;
+}
+
+div.relHouse div.houseName * {
+    width: fit-content;
+}
+
+div.relHouse div.houseName p {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+div.relHouse div.houseName i {
+    color: #dc3546;
+}
+
+div.relHouse div.specs {
+    position: absolute;
+    left: 128px;
+    top: 35px;
+    opacity: .8;
+}
+
+div.relHouse div.specs span.statH {
+    padding: 0 4px 0 10px;
+}
+
+div.relHouse div.specs span.statN {
+    font-weight: 600;
+}
+
+div.relHouse div.specs i {
+    opacity: .5;
+}
+
+div.relHouse span.relRent {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: #01b075;
+    padding: 2px 5px;
+}
+
+
+/*
+    Why Choose Us Section
+
+*/
+
+div.whyUs {
+    padding: 10px 50px 30px;
+    background: #f5f5f5;
+}
+
+div.whyUs p.title,
+div.featured p.title {
+    font-size: 40px;
+    font-weight: 700;
+    padding: 20px 0 40px;
+    opacity: 0.9;
+}
+
+div.whyUs div.items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+div.whyUs div.adv {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 20px #222f3e0a;
+}
+
+div.whyUs div.adv p.subTitle {
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+div.whyUs div.adv p.subContent {
+    opacity: 0.9;
+    line-height: 25px;
+}
+
+
+/*
+    footer
+*/
+
+footer {
+    text-align: center;
+    padding: 5px 0;
+    background: #222f3e;
+    color: #f5f5f5;
+}
+
+@media only screen and (max-width: 1200px) {
+    div.clickedHouse div.mainImage {
+        right: 0;
+    }
+    div.clickedHouse div.details {
+        margin: 3px 0 0 0;
+    }
+    div.clickedHouse div.related {
+        position: relative;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: auto;
+        margin-top: 10px;
+    }
+    div.clickedHouse div.related div.relatedHouses {
+        position: relative;
+        top: 0;
+        margin-top: 5px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        overflow-y: hidden;
+        height: 110px;
+    }
+    div.clickedHouse div.related div.relatedHouses::-webkit-scrollbar {
+        display: none;
+    }
+    div.clickedHouse div.related div.relatedHouses div.relHouse {
+        width: 290px;
+        height: 100px;
+        margin: 0 3px;
+        flex: 0 0 auto;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    div.clickedHouse div.sideImage {
+        width: 100%;
+        top: 305px;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+    }
+    div.clickedHouse div.sideImage>div {
+        height: 100%;
+        width: 250px;
+        margin: 0 3px;
+    }
+    div.clickedHouse div.mainImage {
+        left: 0;
+        right: 0;
+        bottom: 100px;
+    }
+    div.clickedHouse div.details div.desc {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 657px) {
+    /*
+        navigation setup
+    */
+    div.burger {
+        display: block;
+    }
+    nav .navlink {
+        display: none;
+    }
+    div.mobileNav {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        z-index: 5;
+        background: #fff;
+        width: 100vw;
+        right: 0;
+        left: 0;
+        top: 60px;
+        bottom: 0;
+        padding: 50px 0 100px;
+        transform: translateX(100%);
+        transition: all 0.3s ease-in-out;
+    }
+    div.mobileNav * {
+        position: relative;
+        margin: auto;
+        transform: scale(1.5);
+    }
+    div.mobileNav span.signup,
+    div.mobileNav span.login {
+        margin: 0 10px;
+    }
+    div.mobileNav hr {
+        width: 60%;
+        height: 2px;
+        border: none;
+        background: #222f3e54;
+    }
+    /*
+        form
+
+    */
+    div.formContainer {
+        width: 100%;
+        height: 100%;
+    }
+    div.formContainer form {
+        width: 90%;
+    }
+    div.searchBar {
+        padding: 3px;
+        height: 50px;
+    }
+    /*  
+        featured
+    
+    */
+    div.featured {
+        padding: 30px 10px 10px;
+    }
+    div.featured p.title,
+    div.whyUs p.title {
+        padding: 10px 3px 20px;
+        font-size: 30px;
+    }
+    /*
+    
+        searchbar
+    */
+    div.searchBar span.filter span {
+        display: none;
+    }
+    div.searchBar div.inner {
+        grid-template-columns: 1fr 80px;
+    }
+    div.searchResults {
+        padding-top: 20px;
+    }
+    div.searchResults div.filter {
+        padding: 0 10px 10px;
+        grid-template-columns: repeat(auto-fit, 135px);
+        gap: 5px;
+    }
+    /*
+        why us
+    */
+    div.whyUs {
+        padding: 10px 15px;
+    }
+    div.whyUs div.items div.adv {
+        padding: 15px 10px;
+    }
+    div.whyUs div.items div.adv p.subTitle {
+        font-size: 20px;
+        font-weight: 700;
+    }
+    div.whyUs div.items div.adv p.subContent {
+        line-height: normal;
+    }
+    /*
+
+        clicked
+    */
+    div.clickedHouse div.topBar {
+        padding: 0 10px;
+    }
+    div.clickedHouse div.rent {
+        margin-top: 8px;
+    }
+    div.clickedHouse div.rent span.label {
+        font-size: 13px;
+    }
+    div.clickedHouse div.rent span.content {
+        font-size: 23px;
+    }
+    div.clickedHouse div.desc {
+        padding: 0;
+    }
+}

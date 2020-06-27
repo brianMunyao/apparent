@@ -1,0 +1,430 @@
+*,
+html {
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    box-sizing: border-box;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+div.container {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+div.container>* {
+    position: absolute;
+}
+
+nav {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 200px;
+    padding: 10px 10px 10px 0;
+    background: white;
+}
+
+.logo {
+    font-weight: 600;
+}
+
+div.navlinks {
+    height: 35px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+div.navlinks>a {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 6px 0 5px 15px;
+    transition: all 0.3s linear;
+}
+
+div.navlinks>a:hover i {
+    color: rgb(17, 169, 118);
+}
+
+div.navlinks>a i {
+    transition: all 0.2s linear;
+    padding-right: 13px;
+}
+
+div.logout>a i,
+div.logo>a i {
+    padding-right: 6px;
+}
+
+div.navlinks,
+div.logout {
+    opacity: 0.9;
+}
+
+.logo,
+div.logout {
+    display: flex;
+    justify-content: center;
+}
+
+nav .logo {
+    margin-bottom: 50px;
+}
+
+div.logout {
+    margin-top: 300px;
+}
+
+div.logout a i {
+    transition: all 0.1s linear;
+}
+
+div.logout a:hover i {
+    transform: translateY(-5px);
+}
+
+div.scrollmark {
+    position: absolute;
+    top: 81px;
+    width: 5px;
+    border-radius: 0 10px 10px 0;
+    height: 35px;
+    background: rgb(17, 169, 118);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+aside {
+    top: 0;
+    height: 50px;
+    right: 0;
+    left: 200px;
+    background: rgb(238, 238, 238);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(17, 169, 118, 0.21);
+}
+
+aside {
+    padding: 0 20px;
+}
+
+aside .logo {
+    display: none;
+}
+
+div.bell {
+    position: relative;
+    height: 20px;
+    width: 20px;
+}
+
+div.bell>* {
+    position: absolute;
+}
+
+aside i {
+    transform: scale(1.2);
+    opacity: 0.8;
+}
+
+div.icons {
+    display: inline-flex;
+}
+
+div.icons>* {
+    margin: 0 10px;
+}
+
+span.notify {
+    background: red;
+    width: 8px;
+    height: 8px;
+    border: 1px solid rgb(238, 238, 238);
+    border-radius: 5px;
+    right: 4px;
+}
+
+div.burger,
+div.icons>* {
+    cursor: pointer;
+}
+
+div.burger {
+    display: none;
+    width: 30px;
+    padding: 2px;
+}
+
+div.burger:hover div:nth-child(2) {
+    margin-left: 5px;
+}
+
+div.burger div {
+    background: rgba(0, 0, 0, 0.753);
+    height: 3px;
+    width: 100%;
+    margin-bottom: 5px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-origin: 93%;
+}
+
+main {
+    top: 50px;
+    bottom: 0;
+    right: 0;
+    left: 200px;
+    overflow: hidden;
+}
+
+main div.innerMain {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+main div.innerMain>div {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgb(241, 241, 241);
+    overflow: auto;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgb(216, 216, 216);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(17, 169, 118, 0.5);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(17, 169, 118, 0.7);
+}
+
+div.userProfile {
+    width: fit-content;
+    top: 40px;
+    right: 0;
+    z-index: 1;
+    background: white;
+    border-radius: 5px;
+    transform: translateX(110%);
+    padding: 5px;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+div.userProfile>* {
+    margin: 5px 0;
+}
+
+p.log {
+    display: none;
+}
+
+div#property div.imageHolder {
+    width: 100%;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+div#property div.imageHolder input {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+div#property div.imageHolder p.imageText {
+    font-size: 25px;
+    font-weight: 600;
+    color: grey;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+}
+
+
+/*
+    image upload prompt
+*/
+
+div.imgUpload {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.144);
+    z-index: 10;
+}
+
+div.imgUpload div.innerImgUpload {
+    position: relative;
+    width: 410px;
+    height: 420px;
+    background: #fff;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+}
+
+div.imgUpload div.innerImgUpload>* {
+    position: absolute;
+}
+
+div.imgUpload div.innerImgUpload .fa-times {
+    font-size: 25px;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}
+
+div.imgUpload div.innerImgUpload .fa-image {
+    font-size: 150px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: .3;
+}
+
+div.imgUpload div.innerImgUpload div.file {
+    width: 92%;
+    margin: 0 4%;
+    height: 300px;
+    border: dashed 1px grey;
+    top: 50px;
+}
+
+div.imgUpload div.innerImgUpload div.file>* {
+    position: absolute;
+}
+
+div.imgUpload div.innerImgUpload div.file form {
+    width: 100%;
+    height: 100%;
+}
+
+div.imgUpload div.innerImgUpload div.file input#img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+div.imgUpload div.innerImgUpload div.file input[type="submit"] {
+    opacity: 0;
+    pointer-events: none;
+    cursor: pointer;
+}
+
+div.imgUpload div.innerImgUpload div.file p.text {
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 27px;
+    font-weight: 600;
+    color: grey;
+}
+
+div.imgUpload div.innerImgUpload hr {
+    bottom: 25px;
+    width: 100%;
+    height: 3px;
+    border: none;
+    background: rgb(179, 179, 179);
+}
+
+div.imgUpload div.innerImgUpload p.imgSub {
+    bottom: 15px;
+    margin: 0 13%;
+    font-size: 20px;
+    color: rgb(82, 82, 82);
+    background: #fff;
+    font-weight: 600;
+    text-align: center;
+    width: 74%;
+    z-index: 1;
+}
+
+
+/*
+
+moblie view
+
+*/
+
+@media screen and (max-width: 500px) {
+     ::-webkit-scrollbar {
+        width: 5px;
+    }
+    div.container>* {
+        position: absolute;
+    }
+    nav {
+        bottom: 0;
+        top: 90%;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 100%;
+    }
+    aside {
+        left: 0;
+    }
+    main {
+        left: 0;
+        bottom: 10%;
+    }
+    aside,
+    main {
+        padding: 0 10px;
+    }
+    div.burger,
+    aside .logo,
+    p.log {
+        display: block;
+    }
+    nav .logo,
+    div.scrollmark,
+    div.logout,
+    aside>span {
+        display: none;
+    }
+    div.navlinks a {
+        font-size: 12px;
+        font-weight: 600;
+    }
+    div.navlinks a>* {
+        display: flex;
+        justify-content: center;
+    }
+    div.navlinks a i {
+        font-size: 18px;
+    }
+    div#rooms div.roomlist {
+        grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+        grid-auto-rows: 60px;
+    }
+    div.room {
+        font-size: 18px;
+    }
+    div#property div.imageHolder {
+        height: 180px;
+    }
+}
